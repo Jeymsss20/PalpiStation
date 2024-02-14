@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="icon" type="image/x-icon" href="Icon.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: grey;
+        }
+        .timer {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .timer span {
+            animation: timer 1s infinite alternate;
+        }
+        @keyframes timer {
+            from {
+                color: black;
+            }
+            to {
+                color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank you for ordering!</h1>
+    <p>You will be redirected to the homepage shortly.</p>
+   
+   
+    <div class="timer">
+        Redirecting in <span>3</span> seconds...
+    </div>
+   
+    <img src="https://media.tenor.com/DTSmUnrGbwEAAAAi/coffee-coffee-dance.gif">
+
+
+    <script>
+        let countdown = 3;
+        let timer = setInterval(function() {
+            countdown--;
+            document.querySelector('.timer span').textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = "index.html";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+

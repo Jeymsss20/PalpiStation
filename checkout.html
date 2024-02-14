@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="checkout form example">
+  <title>Checkout Form</title>
+  <link rel="icon" type="image/x-icon" href="Icon.jpg">
+</head>
+
+
+<body style="margin: 90px; padding: 0 20px">
+  <h2 class="content-head is-center">Checkout! Please enter your information</h2>
+
+
+   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="checkout.css">
+
+
+  <form class="#" method="POST" data-email="example@email.net" action="">
+
+
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Full Name: </label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required/>
+      </fieldset>
+
+
+      <fieldset class="pure-group">
+        <label for="email"> Email Address:</label>
+        <input id="email" name="email" type="email" value="" placeholder="email@example.com" required />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="address">Delivery Address: </label>
+        <input id="address" name="address" type="text" placeholder="Your delivery address" required />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="contact"> Contact number:</label>
+        <input id="contact" name="contact" type="number" value="" placeholder="Your contact number" required />
+      </fieldset>
+     
+      <fieldset class="pure-group">
+        <label for="city">City</label>
+        <input name="city" type="checkbox" required >Manila</input>
+      </fieldset>
+     
+      <fieldset>
+        <legend>Payment method</legend>
+        <label><input type="radio" name="radio" required> Cash On Delivery</label>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="message">Message to PalpiStation: </label>
+        <textarea id="message" name="message" rows="6" placeholder="Type your note here..."></textarea>
+      </fieldset>
+
+
+      <fieldset>
+        <label for="newsletter">
+        <input type="checkbox" id="newsletter" checked/> Send me the receipt.</label>        
+        <button type="button" class="pure-button pure-button-primary button-xlarge" onclick="placeOrder()">Place Order</button>
+        <button type="reset" class="pure-button button-small" style='margin-right:100px'>Reset info</button>
+      </fieldset>
+    </div>
+
+
+  </form>
+
+
+   <script>
+        function returnToHomepage() {
+            window.location.href = "donecheckout.html";
+        }
+
+
+        function placeOrder() {
+            if (document.querySelector('form').checkValidity()) {
+                returnToHomepage();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>
+
